@@ -1,0 +1,14 @@
+#!/bin/bash
+
+blocknum=0
+
+while true
+do
+  newnum=$(./getcurrblock.sh)
+  if [ $blocknum -lt $newnum ]
+  then
+    blocknum=$newnum
+    cat | ./filter
+  fi
+  sleep 1
+done
