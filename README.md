@@ -29,7 +29,7 @@ However, you can use any programs/libraries you want for reading the JSON data. 
 ```sh
    ________      _________      ______
   | Filter | -> | Extract | -> | Exec |
-   --------      ---------      ------
+   ¯¯¯¯¯¯¯¯      ¯¯¯¯¯¯¯¯¯      ¯¯¯¯¯¯
 ```
 
 ### Filter
