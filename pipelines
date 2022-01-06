@@ -1,3 +1,4 @@
-#!/bin/bash
+filter/all | extract/char22 > output/allchar22.txt &
 
+filter/all | extract/formatjson > output/data.json &
 

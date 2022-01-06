@@ -4,11 +4,20 @@ blocknum=0
 
 while true
 do
-  newnum=$(./getcurrblock.sh)
+  newnum=$(./getcurrblock)
   if [ $blocknum -lt $newnum ]
   then
-    blocknum=$newnum
-    cat | ./filter
+    blocknum=$newnum    
+    inp=$( goal ledger block --strict $blocknum )
+    cd ..
+	while IFS= read -r line
+	do
+	  if [[ $line != \#* ]] ; then
+	    echo "$inp" | ( eval "$line" )
+	  fi
+	done < ./pipelines
+	cd app
   fi
+  
   sleep 1
 done
