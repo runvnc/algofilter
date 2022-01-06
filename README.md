@@ -27,7 +27,9 @@ However, you can use any programs/libraries you want for reading the JSON data. 
 ## Pipeline stages
 
 ```sh
-  _Filter_ -> _Extract_ -> _Exec_
+   ________      _________      ______
+  | Filter | -> | Extract | -> | Exec |
+   --------      ---------      ------
 ```
 
 ### Filter
