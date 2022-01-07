@@ -9,7 +9,7 @@ record data.
 This is set up as a series of stages, with different scripts/programs available in each part, so that they can be composed via pipes.
 Each script reads from STDIN and writes to STDOUT.
 The project will be much more useful if people contribute their own scripts for filtering, extracting etc. via pull requests.
-
+d
 But it can serve as a simple framework for any custom task.
 
 ## Installation
@@ -17,7 +17,7 @@ But it can serve as a simple framework for any custom task.
 You must have the `goal` Algorand binary installed.
 
 To run the example which is set up as default, you will need the `jq` program. 
-You can install it on Ubuntu with `sudo apt-get install jq`.
+You can install it on Ubuntu with `sudo apt-get install jq`.  The example also assumes you have `bc` (calculator) installed on your system.
 However, you can use any programs/libraries you want for reading the JSON data. This is just an example.
 
 You can run `cp pipelines_example pipelines` to try the example pipeline.
