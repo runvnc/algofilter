@@ -23,7 +23,7 @@ Once you have followed the installation instructions below, and configured your 
 You must have the `goal` Algorand binary installed.
 
 To run the example which is set up as default, you will need the `jq` program. 
-You can install it on Ubuntu with `sudo apt-get install jq`.
+You can install it on Ubuntu with `sudo apt-get install jq`.  The example also assumes you have `bc` (calculator) installed on your system.
 However, you can use any programs/libraries you want for reading the JSON data. This is just an example.
 
 ## Pipeline stages
