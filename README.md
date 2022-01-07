@@ -26,7 +26,7 @@ You can run `cp pipelines_example pipelines` to try the example pipeline.
 
 The core of the program is just a shell script (`app/watchblocks`) that looks for new blocks and pipes the transactions
 through each line of the `pipelines` script.
-Once you have followed the installation instructions, and configured your pipelines, you can run it with `./startdaemon`.
+Once you have followed the installation instructions, and configured your pipelines, you can run it with `./start`.
 
 ## Pipeline stages
 
