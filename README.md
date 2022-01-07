@@ -16,7 +16,7 @@ But it can serve as a simple framework for any custom task.
 
 The core of the program is just a shell script (`app/watchblocks`) that looks for new blocks and pipes the transactions
 through each line of the `pipelines` script.
-Once you have followed the installation instructions below, and configured your pipelines, you can run it with `./startdaemon`.
+Once you have followed the installation instructions below, and configured your pipelines, you can run it with `./start`.
 
 ## Installation
 
