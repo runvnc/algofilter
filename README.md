@@ -12,12 +12,6 @@ The project will be much more useful if people contribute their own scripts for 
 
 But it can serve as a simple framework for any custom task.
 
-## Usage
-
-The core of the program is just a shell script (`app/watchblocks`) that looks for new blocks and pipes the transactions
-through each line of the `pipelines` script.
-Once you have followed the installation instructions below, and configured your pipelines, you can run it with `./startdaemon`.
-
 ## Installation
 
 You must have the `goal` Algorand binary installed.
@@ -25,6 +19,14 @@ You must have the `goal` Algorand binary installed.
 To run the example which is set up as default, you will need the `jq` program. 
 You can install it on Ubuntu with `sudo apt-get install jq`.
 However, you can use any programs/libraries you want for reading the JSON data. This is just an example.
+
+You can run `cp pipelines_example pipelines` to try the example pipeline.
+
+## Usage
+
+The core of the program is just a shell script (`app/watchblocks`) that looks for new blocks and pipes the transactions
+through each line of the `pipelines` script.
+Once you have followed the installation instructions, and configured your pipelines, you can run it with `./startdaemon`.
 
 ## Pipeline stages
 
