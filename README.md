@@ -34,6 +34,8 @@ However, you can use any programs/libraries you want for reading the JSON data. 
    ¯¯¯¯¯¯¯¯      ¯¯¯¯¯¯¯¯¯      ¯¯¯¯¯¯
 ```
 
+Many other pipelines are possible, such as having two filter stages.
+
 ### Filter
 
 Example `all`. Passes all transactions through.
@@ -45,13 +47,44 @@ File `filter/all`.
 cat
 ```
 
+Example `pay`. All payment transactions (non close-out).
+
+```sh
+#!/bin/bash
+jq 'select(has("amt"))'
+```
 
 ### Extract
+
+Example `amount`. Pull out amount from transaction record.
+
+```sh
+#!/bin/bash
+jq .amt
+```
 
 ### Exec
 
 In this stage you may run a script or program to trigger an action based on the extracted data.
 
+Example `printalgo`. Convert microalgos to ALGOs and print.
+
+```sh
+mapfile -t lines
+for microalgo in "${lines[@]}"; do
+  algo=$(echo "scale=3; $microalgo / 1000000" | bc)
+    echo "$algo ALGO"
+  done
+```
 
 ## `pipelines` script
 
+Each line in this file is run in parallel using the block of transactions as input.
+
+Example:
+
+```sh
+filter/txns | extract/formatjson >> output/txns.json &
+filter/txns | filter/acfg | extract/formatjson >> output/acfg.json &
+filter/txns | filter/pay | extract/amount | exec/printalgo >> output/amounts &
+```

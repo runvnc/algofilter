@@ -1,6 +1,0 @@
-#!/bin/bash
-
-cd app
-./watchblocks
-
-#setsid app/watchblocks >log.txt 2>&1 < /dev/null &

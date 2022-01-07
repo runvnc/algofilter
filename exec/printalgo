@@ -1,0 +1,7 @@
+#!/bin/bash
+
+mapfile -t lines
+for microalgo in "${lines[@]}"; do
+  algo=$(echo "scale=3; $microalgo / 1000000" | bc)
+  echo "$algo ALGO"
+done

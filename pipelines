@@ -1,4 +1,3 @@
-filter/all | extract/char22 > output/allchar22.txt &
-
-filter/all | extract/formatjson > output/data.json &
-
+filter/txns | extract/formatjson >> output/txns.json &
+filter/txns | filter/acfg | extract/formatjson >> output/acfg.json &
+filter/txns | filter/pay | extract/amount | exec/printalgo >> output/amounts &
