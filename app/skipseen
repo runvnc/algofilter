@@ -1,0 +1,26 @@
+#!/bin/bash
+lasttxid=$(cat testold | jq .tx | tail --lines 1)
+
+echo "Last TX ID = $lasttxid"
+input="testnew"
+doprint=false
+foundprev=false
+prevline=""
+
+while IFS= read -r line
+do
+  if $doprint ; then
+    echo "$line"
+  fi
+  if $foundprev ; then
+    if [ "$line" = "}" ]; then
+      doprint=true
+    fi       
+  fi
+  if [[ "$line" == *"$lasttxid"* ]]; then
+    foundprev=true
+  fi
+  prevline=$line
+done < "$input"
+
+
