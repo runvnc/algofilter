@@ -1,13 +1,11 @@
 #!/bin/bash
-lasttxid=$(cat testold | jq .tx | tail --lines 1)
+lasttxid=$(cat pendingold | jq .tx | tail --lines 1)
 
-echo "Last TX ID = $lasttxid"
-input="testnew"
 doprint=false
 foundprev=false
 prevline=""
 
-while IFS= read -r line
+while read line
 do
   if $doprint ; then
     echo "$line"
@@ -21,6 +19,4 @@ do
     foundprev=true
   fi
   prevline=$line
-done < "$input"
-
-
+done

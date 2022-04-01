@@ -1,0 +1,17 @@
+#!/bin/bash
+
+while true
+do
+  ./getpending
+  inp=$(cat pending | ./skipseen)
+  cd ..
+  while IFS= read -r line
+  do
+  if [[ $line != \#* ]] ; then
+   echo "$inp" | ( eval "$line" )
+  fi
+  done < ./pending_pipelines
+  cd app
+  mv pending pendingold   
+  sleep 0.3
+done

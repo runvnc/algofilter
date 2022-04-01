@@ -1,0 +1,13 @@
+#filter/txns | extract/formatjson >> output/txns.json &
+#filter/txns | filter/acfg | extract/formatjson >> output/acfg.json &
+#filter/txns | filter/pay | extract/amount | exec/printalgo >> output/amounts &
+#
+#
+#filter/txnsfull | extract/formatjson >> output/txfull.json &
+#filter/txnsfull >> output/txfull.json &
+#
+#filter/all >>output/raw
+#filter/txline | exec/countlines >> output/txcount &
+
+filter/pendappid 532913777
+

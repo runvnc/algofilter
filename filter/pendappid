@@ -1,0 +1,3 @@
+#!/bin/bash
+jq "select(.app.id==$1)"
+
