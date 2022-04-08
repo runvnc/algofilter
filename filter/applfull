@@ -1,3 +1,2 @@
 #!/bin/bash
 jq 'select(.txn.type=="appl")'
-

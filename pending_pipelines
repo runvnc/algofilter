@@ -9,5 +9,7 @@
 #filter/all >>output/raw
 #filter/txline | exec/countlines >> output/txcount &
 
-filter/pendappid 532913777
+#filter/pendappid 687212176 | exec/nftgen >>output/testcallsexec &
+
+filter/appl >> output/applraw
 

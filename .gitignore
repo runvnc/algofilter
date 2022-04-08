@@ -2,3 +2,5 @@ log.txt
 exe
 exe/*
 pipelines
+output/*
+pending_pipelines
